@@ -13,7 +13,8 @@ export default class User extends Component {
       console.log("hey");
     },
     car: { brand: "Ford", model: "Focus" },
-    mother: "Martha"
+    mother: "Martha",
+    father: "Burt"
   };
 
   render() {

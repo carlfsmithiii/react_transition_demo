@@ -18,7 +18,15 @@ UserTemplate.propTypes = {
   spanish: PropTypes.bool,
   message: PropTypes.func,
   car: PropTypes.object,
-  mother: PropTypes.string.isRequired
+  mother: PropTypes.string.isRequired,
+  father: function(props, propName, componentName) {
+    if (props[propName] !== "burt") {
+      console.log("who am i");
+      return new Error(
+        `The name ${props[propName]} is incorrect.  It should be burt`
+      );
+    }
+  }
 };
 
 export default UserTemplate;
