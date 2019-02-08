@@ -14,12 +14,27 @@ export default class User extends Component {
     },
     car: { brand: "Ford", model: "Focus" },
     mother: "Martha",
-    father: "Burt"
+    father: "Burt",
+    color: "red"
   };
 
+  changeColor() {
+    // this.setState({
+    //   color: "blue"
+    // });
+    this.refs.myColor.style.color = "blue";
+  }
+
   render() {
+    const style = {
+      color: this.state.color
+    };
     return (
       <div>
+        <h4 style={style} ref="myColor">
+          {this.state.mother}
+        </h4>
+        <div onClick={() => this.changeColor()}>Change Color</div>
         <UserTemplate {...this.state} />
       </div>
     );
